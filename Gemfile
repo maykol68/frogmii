@@ -13,6 +13,7 @@ gem "puma", ">= 5.0"
 
 # Build JSON APIs with ease [https://github.com/rails/jbuilder]
 # gem "jbuilder"
+gem 'pagy'
 
 # Use Redis adapter to run Action Cable in production
 # gem "redis", ">= 4.0.1"
@@ -40,9 +41,6 @@ group :development, :test do
   gem "debug", platforms: %i[ mri windows ]
   gem "faker"
 end
-
-gem 'rake'
-
 
 group :development do
   # Speed up commands on slow machines / big apps [https://github.com/rails/spring]
