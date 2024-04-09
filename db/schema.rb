@@ -16,17 +16,18 @@ ActiveRecord::Schema[7.1].define(version: 2024_04_06_103533) do
 
   create_table "earthquakes", force: :cascade do |t|
     t.decimal "mag"
-    t.string "place", limit: 255
+    t.string "place"
     t.datetime "time"
-    t.string "url", limit: 255
+    t.string "url"
     t.boolean "tsunami"
-    t.string "mag_type", limit: 3
+    t.string "mag_type"
     t.string "title"
     t.decimal "longitude"
     t.decimal "latitude"
+    t.string "external_id"
+    t.string "feature_type"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["url", "title", "place", "mag_type", "longitude", "latitude"], name: "unique_earthquake", unique: true
   end
 
 end

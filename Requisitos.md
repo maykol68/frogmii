@@ -83,3 +83,5 @@ curl --request POST \
 --url http://127.0.0.1:3000/api/features/1/comments \
 --header 'content-type: application/json' \
 --data '{"body": "This is a comment" }'
+
+rails mi_tarea:ejecutar
