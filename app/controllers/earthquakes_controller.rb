@@ -5,8 +5,17 @@ class EarthquakesController < ApplicationController
   # GET /earthquakes
   def index
     earthquakes = Earthquake.all
+
+    page = [params[:page].to_i, 1].max
+    page = 1 if page < 1
+
+    per_page = [params[:per_page].to_i, 1000].min 
+
+    total_pages = (earthquakes.count / per_page.to_f).ceil
+    page = [page, total_pages].min
+
     earthquakes = earthquakes.where(mag_type: params[:filters][:mag_type]) if params[:filters].present? && params[:filters][:mag_type].present?
-    pagy, records = pagy(earthquakes, items: per_page)
+    pagy, records = pagy(earthquakes, items: per_page, page: page)
 
 
     # http://localhost:3000/earthquakes?filters[mag_type]=mw&page=1&per_page=2000
