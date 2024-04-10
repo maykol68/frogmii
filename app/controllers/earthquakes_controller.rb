@@ -35,18 +35,6 @@ class EarthquakesController < ApplicationController
     render json: @earthquake
   end
 
-  # POST /earthquakes
-  def create
-    @earthquake = Earthquake.new(earthquake_params)
-    
-
-    if @earthquake.save
-      render json: @earthquake, status: :created, location: @earthquake
-    else
-      render json: @earthquake.errors, status: :unprocessable_entity
-    end
-  end
-
   # PATCH/PUT /earthquakes/1
   def update
     if @earthquake.update(earthquake_params)
