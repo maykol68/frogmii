@@ -7,9 +7,10 @@ class EarthquakesController < ApplicationController
     earthquakes = Earthquake.all
 
     page = [params[:page].to_i, 1].max
-    page = 1 if page < 1
+    page = 1 if page <= 0
 
-    per_page = [params[:per_page].to_i, 1000].min 
+    per_page = [params[:per_page].to_i, 1000].min
+    per_page = 3 if per_page <= 0
 
     total_pages = (earthquakes.count / per_page.to_f).ceil
     page = [page, total_pages].min
@@ -32,6 +33,7 @@ class EarthquakesController < ApplicationController
 
   # GET /earthquakes/1
   def show
+    sleep 3
     render json: @earthquake
   end
 

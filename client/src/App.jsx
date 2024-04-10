@@ -1,18 +1,18 @@
-import { useState } from 'react'
-import './App.css'
-import EarthquakesList from "./features/earthqueakes/EarthquakesList.jsx";
+import { BrowserRouter as Router } from "react-router-dom";
+import './App.css';
+import NavBar from "./components/NavBar.jsx";
+import AppRoutes from "./components/AppRoutes.jsx";
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
-    <>
+    <Router>
       <div className='app'>
         <h1>Features</h1>
-          <EarthquakesList />
+          <NavBar />
+          <AppRoutes />
       </div>
-    </>
-  )
+    </Router>
+  );
 }
 
-export default App
+export default App;
