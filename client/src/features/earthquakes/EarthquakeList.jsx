@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { API_URL } from "../../constants";
+import { Link } from "react-router-dom";
+
 
 function EarthquakesList() {
     const [earthquakes, setEarthquakes] = useState([]);
@@ -35,16 +37,16 @@ function EarthquakesList() {
         <div>
             {earthquakes.map((earthquake) => (
                 <div key={earthquake.id} className='earthquake-container'>
-                    <h2>{earthquake.feature_type}</h2>
-                    <p>{earthquake.attributes.magnitude}</p>
-                    <p>{earthquake.attributes.place}</p>
-                    <p>{earthquake.attributes.time}</p>
-                    <p>{earthquake.attributes.tsunami}</p>
-                    <p>{earthquake.attributes.mag_type}</p>
-                    <p>{earthquake.attributes.title}</p>
-                    <p>{earthquake.attributes.coordinates.latitude}</p>
-                    <p>{earthquake.attributes.coordinates.longitude}</p>
-                    <p>{earthquake.links.external_url}</p>
+                    <h2>Type: {earthquake.feature_type}</h2>
+                    <p>Mag: {earthquake.attributes.magnitude}</p>
+                    <p>Place: {earthquake.attributes.place}</p>
+                    <p>Time: {earthquake.attributes.time}</p>
+                    <p>tsunami: {earthquake.attributes.tsunami}</p>
+                    <p>mag_type: {earthquake.attributes.mag_type}</p>
+                    <p>title: {earthquake.attributes.title}</p>
+                    <p>latitude: {earthquake.attributes.coordinates.latitude}</p>
+                    <p>longitude: {earthquake.attributes.coordinates.longitude}</p>
+                    <p>external_url: {earthquake.links.external_url}</p>
                 </div>
             ))}
         </div>

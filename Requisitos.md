@@ -65,12 +65,12 @@ La data debe poder ser filtrada por:
 Este endpoint debe recibir un payload que considere la siguiente información para crear un comentario relacionado con el feature :
 Considerar:
 Un feature puede tener uno o más comments, pero solo se crea uno a la vez (por request).
-El payload debe contener un `feature_id`: Integer que hace referencia al `id` interno de un feature y un `body`: Text con el comentario ingresado.
+El payload debe contener un `feature_id`: Integer que hace referencia al `id` interno de un feature y un `body`: Text con el comentario ingresado.  
 Se debe persistir cada comment recibido por este endpoint.
 Se debe validar que existe contenido en el body del nuevo comentario antes de ser persistido.
 
 curl -X GET \
-'http://127.0.0.1:3000/api/features?page=1&per_page=2%27 \
+'http://127.0.0.1:3000/api/features?page=1&per_page=2%27 \l
 -H 'Content-Type: application/vnd.api+json' \
 -H 'cache-control: no-cache'
 
