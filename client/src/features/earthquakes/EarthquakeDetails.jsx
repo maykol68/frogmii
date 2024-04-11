@@ -43,7 +43,7 @@ function EarthquakeDetails() {
                     <p>latitude: {earthquake.attributes.coordinates.latitude}</p>
                     <p>longitude: {earthquake.attributes.coordinates.longitude}</p>
                     <p>external_url: {earthquake.links.external_url}</p>
-                    <Link to="/earthquakes/:id/comments">Comments</Link>
+                    <Link to={`/earthquakes/${earthquake.id}/comments`}></Link>
             </div>
         </div>
     );
