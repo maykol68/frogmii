@@ -11,12 +11,12 @@ Things you may want to cover:
 ```
 
 * System dependencies
+  instalar gemas de ruby on rails
   ```ruby
     bundle install
   ```
-* Configuration
-
 * Database creation
+  debes tener instalado postgresql en tu sistema con un user llamado maymine y el password: maicollo1006 o puedes ir al database.yml y cambiarlo 
   ```ruby
     rails db:create
   ```
@@ -26,14 +26,12 @@ Things you may want to cover:
 rails db:migrate
 ```
 
-* How to run the test suite
-
 * Services (task)
   Cuando ejecutes esta task automaticamente se van a cargar la earthquakes en tu base de datos 
 ```ruby
   rails mi_tarea:ejecutar
 ```
 
-* Filtros 
+## Filtros 
 ### http://localhost:3000/earthquakes?filters[mag_type]=mw&page=1&per_page=2000
 
