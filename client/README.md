@@ -1,8 +1,18 @@
-# React + Vite
+# documentacion del Frontend.
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+debes ejecutar npm install para descargar las dependencias 
+```react
+   npm install
+```
+Luego debes configurar el .env.development.verificando que se vaya a consumir la api a la que deseas acceder.
 
-Currently, two official plugins are available:
+Luego debes ejecutar el comando para iniciar la api.
+```ruby
+ rails s
+```
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Y para finalizar ejecuta el siguiente comando en tu aplicacion de react
+
+```react
+npm run dev
+```
