@@ -1,8 +1,7 @@
 class EarthquakesController < ApplicationController
-  before_action :set_earthquake, only: %i[ show update destroy ]
+  before_action :set_earthquake, only: %i[ show ]
 
 
-  # GET /earthquakes
   def index
     earthquakes = Earthquake.all
 
@@ -31,33 +30,16 @@ class EarthquakesController < ApplicationController
   end
 
 
-  # GET /earthquakes/1
   def show
-    sleep 3
+    sleep 1
     render json: @earthquake
   end
-
-  # PATCH/PUT /earthquakes/1
-  def update
-    if @earthquake.update(earthquake_params)
-      render json: @earthquake
-    else
-      render json: @earthquake.errors, status: :unprocessable_entity
-    end
-  end
-
-  # DELETE /earthquakes/1
-  def destroy
-    @earthquake.destroy!
-  end
-
+  
   private
-    # Use callbacks to share common setup or constraints between actions.
     def set_earthquake
       @earthquake = Earthquake.find(params[:id])
     end
 
-    # Only allow a list of trusted parameters through.
     def earthquake_params
       params.require(:earthquake).permit(:mag, :place, :time, :url, :tsunami, :mag_type, :title, :longitude, :latitude)
     end
