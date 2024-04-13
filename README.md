@@ -32,6 +32,8 @@ rails db:migrate
   rails mi_tarea:ejecutar
 ```
 
-## Filtros 
-### http://localhost:3000/earthquakes?filters[mag_type]=mw&page=1&per_page=2000
+* Filtros
+  1.Al filtrar por mag_type tiene que ir separado por comas ej: [mag_type]=mw,ml,mlg.
+  2. Al colocar el numero de earthquakes que quieres por pagina este no debe sobrepasar los 1000 si sobre pasa los 1000 solamente te traera 1000.
+  [x] http://localhost:3000/earthquakes?filters[mag_type]=mw&page=1&per_page=2000 
 
