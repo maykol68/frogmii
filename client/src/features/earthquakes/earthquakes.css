@@ -1,0 +1,20 @@
+.earthquake-container {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 10px;
+    margin-bottom: 10px;
+    background-color: #f9f9f9;
+  }
+  
+  .earthquake-container:hover {
+    background-color: #eaeaea;
+  }
+  
+  .earthquake-title {
+    color: #333;
+    text-decoration: none;
+  }
+  
+  .earthquake-title:hover {
+    text-decoration: underline;
+  }

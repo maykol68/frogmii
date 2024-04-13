@@ -1,5 +1,5 @@
 class EarthquakesController < ApplicationController
-  before_action :set_earthquake, only: %i[ show update destroy ]
+  before_action :set_earthquake, only: %i[ show ]
 
 
   # GET /earthquakes
@@ -36,21 +36,7 @@ class EarthquakesController < ApplicationController
     sleep 3
     render json: @earthquake
   end
-
-  # PATCH/PUT /earthquakes/1
-  def update
-    if @earthquake.update(earthquake_params)
-      render json: @earthquake
-    else
-      render json: @earthquake.errors, status: :unprocessable_entity
-    end
-  end
-
-  # DELETE /earthquakes/1
-  def destroy
-    @earthquake.destroy!
-  end
-
+  
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_earthquake

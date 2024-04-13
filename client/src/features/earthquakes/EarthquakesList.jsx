@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { API_URL } from "../../constants";
+import { Link } from "react-router-dom";
+import "./earthquakes.css"
 
 
 function EarthquakesList() {
@@ -39,16 +41,7 @@ function EarthquakesList() {
         <div>
             {earthquakes.map((earthquake) => (
                 <div key={earthquake.id} className='earthquake-container'>
-                    <h2>Type: {earthquake.feature_type}</h2>
-                    <p>Mag: {earthquake.attributes.magnitude}</p>
-                    <p>Place: {earthquake.attributes.place}</p>
-                    <p>Time: {earthquake.attributes.time}</p>
-                    <p>tsunami: {earthquake.attributes.tsunami}</p>
-                    <p>mag_type: {earthquake.attributes.mag_type}</p>
-                    <p>title: {earthquake.attributes.title}</p>
-                    <p>latitude: {earthquake.attributes.coordinates.latitude}</p>
-                    <p>longitude: {earthquake.attributes.coordinates.longitude}</p>
-                    <p>external_url: {earthquake.links.external_url}</p>
+                    <Link to={`/earthquakes/${earthquake.id}`} className="earthquake-title">{earthquake.attributes.title}</Link>
                 </div>
             ))}
         </div>

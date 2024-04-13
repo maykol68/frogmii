@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import { API_URL } from '../../constants';
 import { Link } from'react-router-dom';
+import "./earthquakeDetails.css";
 
 function EarthquakeDetails() {
     const [earthquake, setEarthquake] = useState(null);
@@ -21,7 +22,6 @@ function EarthquakeDetails() {
                 console.error('Error fetching earthquake details:', error);
             }
         };
-
         fetchEarthquakeDetails();
     }, [id]);
 
@@ -31,19 +31,19 @@ function EarthquakeDetails() {
 
     return (
         <div>
-            <h2>Earthquake Details</h2>
-            <div key={earthquake.id} className='earthquake-container'>  
-                    <h2>Type: {earthquake.feature_type}</h2>
-                    <p>Mag: {earthquake.attributes.magnitude}</p>
-                    <p>Place: {earthquake.attributes.place}</p>
-                    <p>Time: {earthquake.attributes.time}</p>
-                    <p>tsunami: {earthquake.attributes.tsunami}</p>
-                    <p>mag_type: {earthquake.attributes.mag_type}</p>
-                    <p>title: {earthquake.attributes.title}</p>
-                    <p>latitude: {earthquake.attributes.coordinates.latitude}</p>
-                    <p>longitude: {earthquake.attributes.coordinates.longitude}</p>
-                    <p>external_url: {earthquake.links.external_url}</p>
-                    <Link to={`/earthquakes/${earthquake.id}/comments`}></Link>
+            <h2 className="earthquake-details-title">Earthquake Details</h2>
+            <div key={earthquake.id} className='earthquake-details-container'>  
+                <h2 className="earthquake-details-item">Type: {earthquake.feature_type}</h2>
+                <p className="earthquake-details-item">Mag: {earthquake.attributes.magnitude}</p>
+                <p className="earthquake-details-item">Place: {earthquake.attributes.place}</p>
+                <p className="earthquake-details-item">Time: {earthquake.attributes.time}</p>
+                <p className="earthquake-details-item">Tsunami: {earthquake.attributes.tsunami}</p>
+                <p className="earthquake-details-item">Mag Type: {earthquake.attributes.mag_type}</p>
+                <p className="earthquake-details-item">Title: {earthquake.attributes.title}</p>
+                <p className="earthquake-details-item">Latitude: {earthquake.attributes.coordinates.latitude}</p>
+                <p className="earthquake-details-item">Longitude: {earthquake.attributes.coordinates.longitude}</p>
+                <p className="earthquake-details-item">External URL: {earthquake.links.external_url}</p>
+                <Link to={`/earthquakes/${earthquake.id}/comments`} className="earthquake-details-link">Comment</Link>
             </div>
         </div>
     );

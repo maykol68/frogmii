@@ -1,5 +1,5 @@
 class CommentsController < ApplicationController
-    before_action :set_feature
+    before_action :set_feature, :earthquake
 
     def create
 
@@ -28,7 +28,7 @@ class CommentsController < ApplicationController
     end
 
     def earthquake 
-        @eartquake = Earthquake.find(params[:earthquake_id])
+        @earthquake = Earthquake.find(params[:earthquake_id])
     end
 
 end
