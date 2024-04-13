@@ -2,7 +2,6 @@ class EarthquakesController < ApplicationController
   before_action :set_earthquake, only: %i[ show ]
 
 
-  # GET /earthquakes
   def index
     earthquakes = Earthquake.all
 
@@ -31,19 +30,16 @@ class EarthquakesController < ApplicationController
   end
 
 
-  # GET /earthquakes/1
   def show
-    sleep 3
+    sleep 1
     render json: @earthquake
   end
   
   private
-    # Use callbacks to share common setup or constraints between actions.
     def set_earthquake
       @earthquake = Earthquake.find(params[:id])
     end
 
-    # Only allow a list of trusted parameters through.
     def earthquake_params
       params.require(:earthquake).permit(:mag, :place, :time, :url, :tsunami, :mag_type, :title, :longitude, :latitude)
     end

@@ -1,14 +1,14 @@
 .earthquake-details-container {
-  border: 1px solid #fff; /* Cambiando el color del borde para que se vea en un fondo oscuro */
+  border: 1px solid #fff; 
   border-radius: 5px;
   padding: 10px;
   margin-bottom: 10px;
-  background-color: #333; /* Cambiando el color de fondo a negro */
-  color: #fff; /* Cambiando el color del texto a blanco para que se vea mejor en un fondo oscuro */
+  background-color: #333; 
+  color: #fff; 
 }
 
 .earthquake-details-title {
-  color: #fff; /* Cambiando el color del título a blanco */
+  color: #fff;
   font-size: 1.5rem;
   margin-bottom: 10px;
 }
@@ -18,7 +18,7 @@
 }
 
 .earthquake-details-link {
-  color: #00f0ff; /* Cambiando el color del enlace a un tono de azul */
+  color: #00f0ff; 
   text-decoration: none;
 }
 
