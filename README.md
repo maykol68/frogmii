@@ -42,5 +42,5 @@ rails db:migrate
 ### Comentarios 
   Para crear comentarios asegurate de que al enviar el formulario el metodo sea Post y haya un campo llamado body en el cual pondrias toda la informacion que quieres que vaya en el comentario 
 
-  la ruta de este es: [localhost](http://localhost:3000/earthquakes/1/comments)
+  la ruta de este es: http://localhost:3000/earthquakes/1/comments
 
